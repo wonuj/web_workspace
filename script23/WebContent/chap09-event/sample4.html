@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>키보드 이벤트</h1>
+	
+	<input type="text" id="field" onkeydown="fn1(event)"
+								  onkeyup="fn2(event)"
+								  onkeypress="fn3(event)">
+	<input type="text" id="field-2" onkeyup="valueCheck()" />
+	<p id="message"></p>
+	<div>
+		
+	</div>
+	<script type="text/javascript">
+		function valueCheck() {
+			var text = document.getElement("field-2").value;
+			var el = document.getElementById("message");
+			
+			if (text.lenght<8){
+				el.textContent = "길이가 투쇼트";
+				el.style.color = "red";
+				return;
+			}
+			
+			var level = 0;
+			if (/[a-zA-Z]{1,}/.test(text)){
+				level++;
+			}
+			if (/[0-9]{1,}/.test(text)){
+				level++;
+			}
+			if (/[!@#$%^&*]{1,}/.test(text)){
+				level++;
+			}
+			if (level == 1) {
+				el.textContent = "암호가 투심플";
+				el.style.color = "red";
+			} else if (levle == 2) {
+				el.textContent = "암호가 리를컴플리케이트"
+				el.style.color = "yellow";
+			} else if (level == 3){
+				el.textContent = "암호가 투컴플리케이트"
+				el.style.color = "green";
+			}
+		}
+		var el = document.getElementById("field");	
+	
+		function fn1(event){
+			console.log("fn1", "keydown...", event.which, el.value)
+		}
+		function fn2(event){
+			console.log("fn1", "keypress...", event.which, el.value)
+		}
+		function fn3(event){
+			console.log("fn1", "keyup...", event.which, el.value)
+		}
+	</script>
+</body>
+</html>
