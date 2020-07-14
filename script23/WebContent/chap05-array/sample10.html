@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>배열의 주요 메소드</h1>
+	
+	<h3>배열의 값을 정렬하기</h3>
+<script type="text/javascript">
+	var numbers = [10, 50, 15, 27, 324, 21, 54, 45 , 1245];
+	
+	numbers.sort(function(item1, item2) {
+		return item1 - item2;
+	});
+	console.log('오름차순 정렬된배열', numbers);
+	console.log('오름차순 정렬된배열', numbers.reverse());
+	
+	// 성적순으로 정렬했을 떄 1~3등안에 포함되는 학생의 이름을 조회하기
+	var students = [
+		{name:"홍길동", score:80},
+		{name:"김유신", score:70},
+		{name:"강감찬", score:85},
+		{name:"이순신", score:95},
+		{name:"류관순", score:100},
+	];
+	
+	var studentName = students.sort(function(item1, item2) {
+		return item1.score - item2.score;
+	})
+	var rank = studentName.splice(2, 3);
+	
+	console.log('성적 상위학생', rank);
+	
+	
+</script>
+</body>
+</html>
