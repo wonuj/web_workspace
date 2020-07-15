@@ -1,3 +1,2 @@
 # web_workspace
-웹
-JHTA 수업 
+JHTA 웹 수업 
