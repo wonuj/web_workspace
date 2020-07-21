@@ -1,5 +1,5 @@
-<%@page import="com.sample.vo.User"%>
-<%@page import="com.sample.vo.Book"%>
+<%@page import="com.simple.vo.User"%>
+<%@page import="com.simple.vo.Book"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

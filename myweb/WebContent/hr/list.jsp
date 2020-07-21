@@ -1,7 +1,7 @@
-<%@page import="com.sample.util.NumberUtil"%>
-<%@page import="com.sample.vo.Employee"%>
+<%@page import="com.simple.util.NumberUtil"%>
+<%@page import="com.simple.vo.Employee"%>
 <%@page import="java.util.List"%>
-<%@page import="com.sample.dao.EmployeeDao"%>
+<%@page import="com.simple.dao.EmployeeDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

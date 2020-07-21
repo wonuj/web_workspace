@@ -1,6 +1,6 @@
 <%@page import="com.simple.dto.BoardDto"%>
 <%@page import="com.simple.vo.Board"%>
-<%@page import="com.simple.dao.BoardDao"%>
+<%@page import="cocom.sample.dao.BoardDao>
 <%@page import="com.simple.util.NumberUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

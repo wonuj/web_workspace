@@ -36,11 +36,11 @@ public class TodoDao {
 			todos.setTitle(rs.getString("todo_title"));
 			todos.setContent(rs.getString("todo_content"));
 			todos.setDay(rs.getDate("todo_day"));
-			todos.setCompletedDay(rs.getDate("todo_complete_day"));
+			todos.setCompletedDay(rs.getDate("todo_completed_day"));
 			todos.setStatus(rs.getString("todo_status"));
 			todos.setUserId(rs.getString("user_id"));
 			todos.setUserName(rs.getString("user_name"));
-			todos.setCreateDate(rs.getDate("todo_created_dayte"));
+			todos.setCreateDate(rs.getDate("todo_created_date"));
 			
 			recentTodos.add(todos);
 		}
@@ -69,7 +69,7 @@ public class TodoDao {
 			todoDto.setCompletedDay(rs.getDate("todo_completed_day"));
 			todoDto.setStatus(rs.getString("todo_status"));
 			todoDto.setUserId(rs.getString("user_id"));
-			todoDto.setCreateDate(rs.getDate("todo_created_dayte"));
+			todoDto.setCreateDate(rs.getDate("todo_created_date"));
 			todoDto.setUserName(rs.getString("user_name"));
 		}
 		

@@ -1,7 +1,7 @@
 
-<%@page import="com.sample.vo.SampleFile"%>
+<%@page import="com.simple.vo.SampleFile"%>
 <%@page import="java.util.List"%>
-<%@page import="com.sample.dao.SampleFileDao"%>
+<%@page import="com.simple.dao.SampleFileDao"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
