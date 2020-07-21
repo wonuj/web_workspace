@@ -1,35 +1,41 @@
+<%@page import="com.simple.vo.User"%>
+<%@page import="com.simple.dao.UserDao"%>
+<%@page import="com.simple.vo.Board"%>
+<%@page import="java.util.List"%>
+<%@page import="com.simple.dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style type="text/css">
 	.table {
 		border: 1px gray;
 	}
+ 	a:link { color: black; text-decoration: none;}
+ 	a:visited { color: black; text-decoration: none;}
+ 	a:hover { color: blue; text-decoration: underline;}
 </style>
 </head>
 <body>
-
 <%
-	
+	BoardDao boardDao = new BoardDao();
+	List<Board> boards = boardDao.getAllBoards();
 %>
 
-<div class="container p-3 my-4 border">
-	<div>
-		<h1 class="mt-2">Coders9</h1>
-	</div>
-	<div class="row mt-2 ">
+<div class="container">
+	<h1 class="mt-5">Coders9</h1>
+	<div class="row mt-3 ">
 		<div class="col-12 mt-3">
 			<h3>Board List</h3>
-			<table class="table table-hover">
+			<table class="table">
 				<colgroup>
                   <col width="10%">
                   <col width="60%">
@@ -45,31 +51,36 @@
 					</tr>
 				</thead>
 				<tbody>
+				<%
+					if (boards.isEmpty()) {
+				%>
 					<tr class="text-center">
-						<td>1</td>
-						<td class="text-left">안녕하세요.</td>
-						<td>장원준</td>
-						<td>2020.07.16</td>
+						<td>게시글이 존재하지 않습니다.</td>
 					</tr>
+				
+				<%
+					} else { 
+						for (Board board : boards) {
+				%>
 					<tr class="text-center">
-						<td>2</td>
-						<td class="text-left">안녕하세요.</td>
-						<td>장원준</td>
-						<td>2020.07.16</td>
+						<td><%=board.getBoardNo() %></td>
+						<td class="text-left"><a href="../board/boardDetail.jsp?boardno=<%=board.getBoardNo() %>"><%=board.getBoardTitle() %></a></td>
+						<td>hong</td>
+						<td><%=board.getBoardRegisteredDate() %></td>
 					</tr>
-					<tr class="text-center">
-						<td>3</td>
-						<td class="text-left">안녕하세요.</td>
-						<td>장원준</td>
-						<td>2020.07.16</td>
-					</tr>
+				<%
+						}
+					}
+				%>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<div class="text-right">
-		<a href="../board/insertBoard.jsp" class="btn btn-light text-right" >글 등록</a>
+		<a href="../board/insertBoard.jsp" class="btn btn-light text-right" >Write</a>
 	</div>
 </div>
+
+
 </body>
 </html>

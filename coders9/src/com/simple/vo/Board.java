@@ -5,7 +5,6 @@ import java.util.Date;
 public class Board {
 	private int boardNo;
 	private String boardTitle;
-	private String userId;
 	private Date boardRegisteredDate;
 	private String content;
 	
@@ -25,14 +24,6 @@ public class Board {
 
 	public void setBoardTitle(String boardTitle) {
 		this.boardTitle = boardTitle;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
 	}
 
 	public Date getBoardRegisteredDate() {

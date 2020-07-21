@@ -4,18 +4,16 @@
 	pageEncoding="UTF-8"%>
 <%
 
-	int boardNo = Integer.parseInt(request.getParameter("boardno"));
 	String title = request.getParameter("title");
 	String content = request.getParameter("content");
 	
 	Board board = new Board();
-	board.setBoardNo(boardNo);
 	board.setBoardTitle(title);
 	board.setContent(content);
-	
+
 	BoardDao boardDao = new BoardDao();
-	boardDao.modifyBoard(board);
-	
+	boardDao.insertBoard(board);
+
 	response.sendRedirect("../board/boardList.jsp");
 	
 %>
